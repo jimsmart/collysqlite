@@ -13,8 +13,8 @@ import "github.com/jimsmart/collysqlite"
 
 ### Dependencies
 
-- [go-sqlite3 (github.com/mattn/go-sqlite3)](https://github.com/mattn/go-sqlite3) — Go database driver.
-- [sqlx (github.com/jmoiron/sqlx)](https://github.com/jmoiron/sqlx) — `database/sql` extensions.
+- [go-sqlite3](https://github.com/mattn/go-sqlite3) — Go database driver.
+- [sqlx](https://github.com/jmoiron/sqlx) — `database/sql` extensions.
 - Standard library.
 - [Ginkgo](https://onsi.github.io/ginkgo/) and [Gomega](https://onsi.github.io/gomega/) if you wish to run the tests.
 
