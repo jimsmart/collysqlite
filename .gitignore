@@ -1,0 +1,5 @@
+coverage.out
+TODO
+**/*.sqlite
+data/**
+.data/**
