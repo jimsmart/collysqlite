@@ -1,6 +1,6 @@
 # collysqlite
 
-collysqlite is a [Go](https://golang.org) package providing an experimental work-in-progress prototype of an SQLite cache for Colly.
+collysqlite is a [Go](https://golang.org) package providing an experimental work-in-progress prototype of an SQLite cache for [Colly](https://github.com/gocolly/colly).
 
 ## Installation
 ```bash
@@ -13,8 +13,8 @@ import "github.com/jimsmart/collysqlite"
 
 ### Dependencies
 
-- SQLite3.
-- SQLX.
+- [SQLite3](https://github.com/mattn/go-sqlite3).
+- [SQLX](https://github.com/jmoiron/sqlx).
 - Standard library.
 - [Ginkgo](https://onsi.github.io/ginkgo/) and [Gomega](https://onsi.github.io/gomega/) if you wish to run the tests.
 
