@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestCollysqlite(t *testing.T) {
+func TestCollySqlite(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "CollySqlite Suite")
 }

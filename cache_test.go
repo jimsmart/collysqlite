@@ -15,30 +15,30 @@ var _ = Describe("Cache", func() {
 
 	It("should Init and Destroy", func() {
 		Context("with a vanilla name (no path)", func() {
-			name := randomName("test-cache-db-")
-			filename := name + ".sqlite"
+			name := "test-db-" + randomName()
 			c := collysqlite.NewCache(name)
 			Expect(c.Init()).To(BeNil())
+			filename := name + ".sqlite"
 			Expect(filename).To(BeAnExistingFile())
 			Expect(c.Destroy()).To(BeNil())
 			Expect(filename).NotTo(BeAnExistingFile())
 		})
 
 		Context("with a ./name", func() {
-			name := randomName("./test-cache-db-")
-			filename := name + ".sqlite"
+			name := "test-db-" + randomName()
 			c := collysqlite.NewCache(name)
 			Expect(c.Init()).To(BeNil())
+			filename := name + ".sqlite"
 			Expect(filename).To(BeAnExistingFile())
 			Expect(c.Destroy()).To(BeNil())
 			Expect(filename).NotTo(BeAnExistingFile())
 		})
 
 		Context("with a ./subfolder/name", func() {
-			name := randomName("./data/test-cache-db-")
-			filename := name + ".sqlite"
+			name := "test-db-" + randomName()
 			c := collysqlite.NewCache(name)
 			Expect(c.Init()).To(BeNil())
+			filename := name + ".sqlite"
 			Expect(filename).To(BeAnExistingFile())
 			Expect(c.Destroy()).To(BeNil())
 			Expect(filename).NotTo(BeAnExistingFile())
@@ -46,7 +46,7 @@ var _ = Describe("Cache", func() {
 	})
 
 	It("should Put, Get and Remove", func() {
-		name := randomName("test-cache-db-")
+		name := "test-db-" + randomName()
 		c := collysqlite.NewCache(name)
 		Expect(c.Init()).To(BeNil())
 		defer c.Destroy()
@@ -70,7 +70,7 @@ var _ = Describe("Cache", func() {
 	})
 })
 
-func randomName(prefix string) string {
+func randomName() string {
 	b := make([]byte, 8)
 	_, err := rand.Read(b)
 	if err != nil {
@@ -78,5 +78,5 @@ func randomName(prefix string) string {
 	}
 	h := make([]byte, hex.EncodedLen(len(b)))
 	hex.Encode(h, b)
-	return prefix + string(h)
+	return string(h)
 }
